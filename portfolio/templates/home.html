@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +12,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<link rel = "stylesheet" href = "{% static 'style.css' %}">
+
 <link href="static/style.css" rel="stylesheet">
   
 </head>
+<style>
+
+
+</style>
 <body>
+
     
     <!-- Navbar content -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <nav class="navbar-expand-lg navbar-light ">
         <div class="container">
             <a class="navbar-brand" href="#">John Vincent Obispo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +49,17 @@
             </div>
         </div>
     </nav>
+    <br>
+
+<!-- VIDEO -->
+<div class="video-container">
+    <video autoplay muted loop class="background-video" id="background-video">
+        <source src="{% static 'WELCOME.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+    
 
     <!-- Table with image and text -->
     <div class="container my-5 profile-section">
@@ -45,7 +68,7 @@
                 <img id="imageSlider" src="static/OBISPO_BSIT4A (1).png" alt="John Vincent Obispo" class="img-fluid rounded-image">
             </div>
             <div class="col-md-6 align-self-center profile-text-container">
-                <h1 class="greeting display-4">Hello!</h1>
+                <h1 class="greeting display-2">Hello!</h1>
                 <p class="introduction lead">
                     I'm Vincent, a Web developer and Software Developer based in Zamboanga City.
                 </p>
@@ -53,41 +76,54 @@
                     📞 +639 4576 96432 <br>
                     ✉️ johnvincent.obispo@gmail.com 
                 </p>
+                <div class="social-media-icons">
+                    <a href="https://twitter.com/yourusername" target="_blank" class="icon-container twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/yourusername" target="_blank" class="icon-container instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/yourusername" target="_blank" class="icon-container facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://pinterest.com/yourusername" target="_blank" class="icon-container pinterest">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                </div>
                 <a href="#contact-form" class="btn work-with-me-btn">Work with Me</a>
             </div>
         </div>
     </div>
 
-    <!-- ABOUT ME -->
-<!-- ABOUT ME -->
-<div class="about-me-section">
-    <div class="container">
-        <div class="row">
-            <!-- Profile Image -->
-            <div class="col profile-image-container">
-                <img src="static/billie.png" alt="John Vincent C. Obispo" class="profile-image">
-            </div>
 
-            <!-- About Me Text and Summary -->
-            <div class="col about-me-content">
-                <div class="header-section">
-                    <h2>About Me</h2>
+<!-- ABOUT ME -->
+    <div class="about-me-section">
+        <div class="container">
+            <div class="row">
+                <div class="col profile-image-container">
+                    <img src="static/billie.png" alt="John Vincent C. Obispo" class="profile-image">
                     <p class="name"><strong>John Vincent C. Obispo</strong></p>
                     <p class="location">Zamboanga City, Philippines</p>
                     <p class="email"><a href="mailto:johnvincent.obispo@gmail.com">johnvincent.obispo@gmail.com</a></p>
-                    <p class="phone">09457696432</p>
+                    <p class="phone">+639 4576 96432</p>
                 </div>
-                <div class="summary-section">
-                    <p>Versatile Software and Web Developer with a flair for creating user-centric digital solutions and robust databases using HTML, CSS, JavaScript, Bootstrap, Flutter, and Firebase. Experienced in the digital collectibles market, A person who brings valuable skills in market analysis, strategic negotiation, and customer service. Adept in graphic design and UI/UX, ensuring functionality meets visual appeal. Proven in project management, excels in team collaboration, and problem-solving, and adapts to evolving environments. Committed to lifelong learning and driving innovation.</p>
-                </div>
-                <!-- Download Button -->
-                <div class="download-button-container">
-                    <a href="path_to_document/Obispo_Resume.pdf" class="btn" download="John_Vincent_Obispo_Resume">Download My Resume</a>
+
+                <div class="col ">
+                    <div class="header-section">
+                        <h2>About Me</h2>
+                    </div>
+                    <div class="summary-section">
+                        <p>Versatile Software and Web Developer with a flair for creating user-centric digital solutions and robust databases using HTML, CSS, JavaScript, Bootstrap, Flutter, and Firebase. Experienced in the digital collectibles market, A person who brings valuable skills in market analysis, strategic negotiation, and customer service. Adept in graphic design and UI/UX, ensuring functionality meets visual appeal. Proven in project management, excels in team collaboration, and problem-solving, and adapts to evolving environments. Committed to lifelong learning and driving innovation.</p>
+                    </div>
+                    <div class="download-button-container">
+                        <a href="path_to_document/Obispo_Resume.pdf" class="btn" download="John_Vincent_Obispo_Resume">
+                            <i class="fa fa-download"></i> Download My Resume
+                        </a>
+                    </div>                
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
     
@@ -233,6 +269,8 @@
                 </div>
               </div>
               
+      
+        
 
 <!--HEADER IMAGE CHANGE-->
     <script>
