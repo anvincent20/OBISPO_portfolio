@@ -11,7 +11,9 @@ body {
     padding: 0;
 }
 
-
+.navbar-container {
+    background-color: #fff;
+}
     .navbar {
         background-color: #fff;
         box-shadow: 0 2px 4px rgba(0,0,0,.1); 
@@ -54,7 +56,11 @@ body {
     }
     
 
-
+.background-black{
+    background-color: #f8f9fa;  
+    max-width: 100%;
+    height: 110%;
+}
 
 
     /* header-introduction-work button */
@@ -392,39 +398,56 @@ input:focus, textarea:focus {
 
 /* GRAPHIC */
 .graphic-designs h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #333;
-    font-weight: 300;
-    font-family: 'Poppins', sans-serif;
-}
-
-.graphic-container {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem; /* Gives space between title and cards */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
 }
 
+.graphic-designs {
+    padding: 2rem 0;
+    background-color: #f9f9f9; 
+}
+.graphic-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 0 1.5rem;
+}
 .graphic-card {
-    background: #fff;
+    background: #ffffff;
     color: #333;
-    padding: 15px; 
+    padding: 1rem;
     border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: calc(100% - 30px); 
-    max-width: 300px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.graphic-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    transform: translateX(-50%) rotate(15deg);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.graphic-card:hover:before {
+    transform: translateX(-50%) rotate(25deg);
 }
 
 .graphic-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .graphic-overlay {
@@ -446,12 +469,13 @@ input:focus, textarea:focus {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     width: auto; 
-    max-width: 600px; 
-    max-height: 80vh;
+    max-width: 900px; 
+    max-height: 100vh;
     overflow-y: auto;
     position: relative;
     margin: 0 10px; 
     text-align: center;
+    transition: all 0.5s ease;
 }
 
 .close-button {
@@ -460,13 +484,21 @@ input:focus, textarea:focus {
     right: 15px;
     cursor: pointer;
     font-size: 24px;
+    color: #ff9900; 
 }
 
 .graphic-image {
-    width: 100%; 
-    height: auto;
-    margin-bottom: 10px;
-    object-fit: cover; 
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    border-radius: 5px; 
+}
+
+.graphic-card:hover .graphic-image {
+    transform: scale(1.05);
 }
 
 .graphic-text {
@@ -474,14 +506,15 @@ input:focus, textarea:focus {
 }
 
 
-.graphic-card h2 {
-    margin: 0 0 10px; /* Adjusted bottom margin */
-    font-size: 1.2rem; /* Smaller font size */
+.graphic-card h2, .graphic-card{
+    margin: 0 0 10px; 
+    font-size: 1.2rem; 
+    padding: 0.5rem 0;
 }
 
 .graphic-card p {
     margin: 0;
-    font-size: 0.9rem; /* Smaller font size */
+    font-size: 0.9rem; 
 }
 
 
@@ -755,12 +788,43 @@ input:focus, textarea:focus {
 /* divider */
 .divider {
     width: 90%;
-    height: 2px; 
-    background-color: #ccc; 
+    height: 1px; 
+    background-color: #dbdada; 
     margin: 20px auto; 
 }
 
+/* styles */
 
+.square-symbol {
+    color: rgb(255, 81, 7); 
+    margin-right: 10px;
+    font-size: 1.5em; 
+}
+
+.triangle-symbol {
+    color: #04a301; 
+    margin-right: 10px;
+    font-size: 1.5em; 
+    display: inline-block;
+    transform: translateY(2px); 
+}
+
+.circle-symbol {
+    color: #ff0000; 
+    margin-right: 10px;
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+.diamond-symbol {
+    color: #2200ff; 
+    margin-right: 10px;
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: middle; 
+    transform: rotate(45deg); 
+}
 
 
 /* Responsive design for smaller screens */
