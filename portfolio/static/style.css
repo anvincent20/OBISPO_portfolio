@@ -20,16 +20,24 @@ body {
     }
     .navbar-brand {
         font-weight: 600; 
-        color: #007bff;
+        color: #0b0b0b;
     }
+
     .nav-item .nav-link {
-        color: #007bff; 
+        color: navy; 
     }
+    
     .nav-item .nav-link:hover {
-        color: #0056b3; 
+        color: #0056b3;
     }
+    
 
-
+    .nav-image {
+        height: 70px; 
+        width: auto; 
+        border-radius: 50%; 
+    }
+    
 
     /* video */
   
@@ -57,11 +65,17 @@ body {
     
 
 .background-black{
-    background-color: #f8f9fa;  
+    background-color: #1e1e1f;  
     max-width: 100%;
     height: 110%;
 }
 
+.background-nav{
+    background-color: #e9e7e7;  
+    max-width: 100%;
+    height: 120%;
+    padding-bottom: 1rem;
+}
 
     /* header-introduction-work button */
     .custom-table {
@@ -80,7 +94,7 @@ body {
         margin: auto;
         padding: 20px;
         border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
     }
 
     .custom-table img {
@@ -188,7 +202,7 @@ body {
     flex-direction: row; 
     flex-wrap: wrap;
     padding: 40px; 
-    
+    box-shadow: #000000;
 }
 
 .col {
@@ -469,15 +483,47 @@ input:focus, textarea:focus {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    width: auto; 
-    max-width: 900px; 
+    width: auto;
+    max-width: 900px;
     max-height: 100vh;
-    overflow-y: auto;
     position: relative;
-    margin: 0 10px; 
+    margin: 0 10px;
     text-align: center;
-    transition: all 0.5s ease;
 }
+
+.carousel {
+    position: relative;
+}
+
+.carousel-images img {
+    width: 100%;
+    display: none;
+}
+
+.carousel-images img.active {
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #5d5b5b;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 100;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
 
 .close-button {
     position: absolute;
@@ -485,7 +531,8 @@ input:focus, textarea:focus {
     right: 15px;
     cursor: pointer;
     font-size: 24px;
-    color: #ff9900; 
+    background: none;
+    border: none;
 }
 
 .graphic-image {
@@ -617,15 +664,47 @@ background-color: #fff;
 padding: 20px;
 border-radius: 10px;
 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-width: auto; 
-max-width: 900px; 
+width: auto;
+max-width: 900px;
 max-height: 100vh;
-overflow-y: auto;
 position: relative;
-margin: 0 10px; 
+margin: 0 10px;
 text-align: center;
-transition: all 0.5s ease;
 }
+
+.carousel {
+position: relative;
+}
+
+.carousel-images img {
+width: 100%;
+display: none;
+}
+
+.carousel-images img.active {
+display: block;
+}
+
+.carousel-button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: #5d5b5b;
+border: none;
+padding: 10px;
+cursor: pointer;
+font-size: 24px;
+z-index: 100;
+}
+
+.carousel-button.prev {
+left: 10px;
+}
+
+.carousel-button.next {
+right: 10px;
+}
+
 
 .close-button {
 position: absolute;
@@ -633,7 +712,8 @@ top: 10px;
 right: 15px;
 cursor: pointer;
 font-size: 24px;
-color: #ff9900; 
+background: none;
+border: none;
 }
 
 .mobile-image {
@@ -677,7 +757,7 @@ margin: 1rem 0;
 .next-mobile {
 cursor: pointer;
 padding: 10px 15px;
-background-color: #ab0303;
+background-color: #ff0000;
 border: none;
 border-radius: 5px;
 color: white;
@@ -687,9 +767,8 @@ transition: background-color 0.3s ease;
 
 .prev-mobile:hover,
 .next-mobile:hover {
-background-color: #aa0404;
+background-color: #7e0404;
 }
-
 
 
 
@@ -766,15 +845,47 @@ background-color: #fff;
 padding: 20px;
 border-radius: 10px;
 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-width: auto; 
-max-width: 900px; 
+width: auto;
+max-width: 900px;
 max-height: 100vh;
-overflow-y: auto;
 position: relative;
-margin: 0 10px; 
+margin: 0 10px;
 text-align: center;
-transition: all 0.5s ease;
 }
+
+.carousel {
+position: relative;
+}
+
+.carousel-images img {
+width: 100%;
+display: none;
+}
+
+.carousel-images img.active {
+display: block;
+}
+
+.carousel-button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: #5d5b5b;
+border: none;
+padding: 10px;
+cursor: pointer;
+font-size: 24px;
+z-index: 100;
+}
+
+.carousel-button.prev {
+left: 10px;
+}
+
+.carousel-button.next {
+right: 10px;
+}
+
 
 .close-button {
 position: absolute;
@@ -782,7 +893,8 @@ top: 10px;
 right: 15px;
 cursor: pointer;
 font-size: 24px;
-color: #ff9900; 
+background: none;
+border: none;
 }
 
 .desktop-image {
@@ -836,7 +948,7 @@ transition: background-color 0.3s ease;
 
 .prev-desktop:hover,
 .next-desktop:hover {
-background-color: #139d10;
+background-color: #066704;
 }
 
 
@@ -845,8 +957,9 @@ background-color: #139d10;
 
 
 
-/* website */
 
+
+/* website */
 .website-designs h1 {
     font-size: 2.5rem;
     color: #333;
@@ -919,15 +1032,47 @@ background-color: #fff;
 padding: 20px;
 border-radius: 10px;
 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-width: auto; 
-max-width: 900px; 
+width: auto;
+max-width: 900px;
 max-height: 100vh;
-overflow-y: auto;
 position: relative;
-margin: 0 10px; 
+margin: 0 10px;
 text-align: center;
-transition: all 0.5s ease;
 }
+
+.carousel {
+position: relative;
+}
+
+.carousel-images img {
+width: 100%;
+display: none;
+}
+
+.carousel-images img.active {
+display: block;
+}
+
+.carousel-button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: #5d5b5b;
+border: none;
+padding: 10px;
+cursor: pointer;
+font-size: 24px;
+z-index: 100;
+}
+
+.carousel-button.prev {
+left: 10px;
+}
+
+.carousel-button.next {
+right: 10px;
+}
+
 
 .close-button {
 position: absolute;
@@ -935,7 +1080,8 @@ top: 10px;
 right: 15px;
 cursor: pointer;
 font-size: 24px;
-color: #ff9900; 
+background: none;
+border: none;
 }
 
 .website-image {
@@ -996,8 +1142,8 @@ background-color: rgb(212, 69, 8);
 .showcase-description {
     color: #333;
     background: #f9f9f9;
-    padding: 2rem 0; /* Top and bottom padding */
-    margin: 0 auto; /* Auto margins for horizontal centering */
+    padding: 2rem 0; 
+    margin: 0 auto; 
 }
 
 .showcase-caption {
@@ -1035,7 +1181,6 @@ background-color: rgb(212, 69, 8);
     margin: auto;
 
 }
-
 
 
 
