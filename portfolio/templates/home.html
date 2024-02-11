@@ -29,8 +29,7 @@
 
     
     <!-- Navbar content -->
-    <div class="background-nav">
-    <nav class="navbar-expand-lg ">
+    <nav class="navbar-expand-lg navbar-light ">
         <div class="container navbar-container">
             <img src="static/logo.png" alt="John Vincent C. Obispo" class="nav-image">
             <a class="navbar-brand" href="#">John Vincent Obispo</a>
@@ -94,7 +93,7 @@
         </div>
     </div>
 
-</div>
+
 
 <!-- ABOUT ME -->
 <div class="about-me-section"  data-aos="fade-zoom-in"
@@ -151,11 +150,11 @@ data-aos-offset="0" >
     
 
                 <!--SHOWCASES -->
-                <div class="divider"></div>
                 <section class="graphic-designs"  data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="300"
                 data-aos-offset="0">
+                <div class="divider"></div>
                     <h1><span class="diamond-symbol">&#9670;</span> Graphic Designs</h1>
         
                     <div class="graphic-container">
@@ -189,7 +188,7 @@ data-aos-offset="0" >
                         <button class="prev-graphic">&#10094;</button>
                         <button class="next-graphic">&#10095;</button>
                     </div>
-                    <div class="graphic-overlay" onclick="toggleGraphicInfo(document.querySelector('.graphic-card.graphic-opened'))">
+                    <div class="all-overlay" onclick="toggleGraphicInfo(document.querySelector('.graphic-card.graphic-opened'))">
                         <div class="graphic-info">
                             <span class="close-button" onclick="toggleGraphicInfo()">x</span>
                             <div class="graphic-content">
@@ -211,14 +210,15 @@ data-aos-offset="0" >
                         </div>                        
                     </div>
                 </section>
+
                 
                     
 
-                <div class="divider"></div>
                     <section class="mobile-designs"  data-aos="fade-zoom-in"
                     data-aos-easing="ease-in-back"
                     data-aos-delay="300"
                     data-aos-offset="0">
+                    <div class="divider"></div>
                     <h1><span class="circle-symbol">&#9679;</span> Mobile Applications</h1>
         
                     <div class="mobile-container">
@@ -252,7 +252,7 @@ data-aos-offset="0" >
                         <button class="prev-mobile">&#10094;</button>
                         <button class="next-mobile">&#10095;</button>
                     </div>
-                    <div class="mobile-overlay" onclick="toggleMobileInfo(document.querySelector('.mobile-card.mobile-opened'))">
+                    <div class="all-overlay" onclick="toggleMobileInfo(document.querySelector('.mobile-card.mobile-opened'))">
                         <div class="mobile-info">
                             <span class="close-button" onclick="toggleMobileInfo()">x</span>
                             <div class=" mobile-content">
@@ -277,11 +277,11 @@ data-aos-offset="0" >
                 
 
 
-                <div class="divider"></div>
                 <section class="desktop-designs"  data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="300"
                 data-aos-offset="0">
+                <div class="divider"></div>
                     <h1><span class="triangle-symbol">&#9650;</span> Desktop Applications</h1>
                 
                     <div class="desktop-container">
@@ -340,11 +340,11 @@ data-aos-offset="0" >
                 
                 
                                     
-                <div class="divider"></div>
                 <section class="website-designs"  data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="300"
                 data-aos-offset="0">
+                <div class="divider"></div>
                     <h1><span class="square-symbol">&#9632;</span> Website</h1>
             
                     <div class="website-container">
@@ -402,7 +402,6 @@ data-aos-offset="0" >
                 </section>
 
 
-            <div class="divider"></div>
             <!-- CONTACT ME -->
             <div class="background-black">
             <div class="contact-container">
@@ -518,7 +517,7 @@ data-aos-offset="0" >
 
     updateDisplay();
 
-    var overlay = document.querySelector('.graphic-overlay');
+    var overlay = document.querySelector('.all-overlay');
 
     graphicCards.forEach(function(card) {
         card.addEventListener('click', function() {
@@ -567,7 +566,7 @@ function toggleGraphicInfo() {
              <script>
                    document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.mobile-overlay .carousel-images img');
+    const slides = document.querySelectorAll('.all-overlay .carousel-images img');
     const totalSlides = slides.length;
 
     function showSlide(index) {
@@ -586,11 +585,11 @@ function toggleGraphicInfo() {
 
     showSlide(currentSlide);
 
-    document.querySelector('.mobile-overlay .prev').addEventListener('click', function() {
+    document.querySelector('.all-overlay .prev').addEventListener('click', function() {
         moveSlide(-1);
     });
 
-    document.querySelector('.mobile-overlay .next').addEventListener('click', function() {
+    document.querySelector('.all-overlay .next').addEventListener('click', function() {
         moveSlide(1);
     });
 
@@ -616,7 +615,7 @@ function toggleGraphicInfo() {
 
     updateDisplay();
 
-    var overlay = document.querySelector('.mobile-overlay');
+    var overlay = document.querySelector('.all-overlay');
 
     mobileCards.forEach(function(card) {
         card.addEventListener('click', function() {
