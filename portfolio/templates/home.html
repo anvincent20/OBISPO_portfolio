@@ -30,7 +30,7 @@
     
     <!-- Navbar content -->
     <nav class="navbar-expand-lg navbar-light ">
-        <div class="container navbar-container">
+        <div class=" navbar-container">
             <img src="static/logo.png" alt="John Vincent C. Obispo" class="nav-image">
             <a class="navbar-brand" href="#">John Vincent Obispo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,13 +39,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Showcase</a>
+                        <a class="nav-link" href="#showcase-section" style="color: crimson">Showcase</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacts</a>
+                        <a class="nav-link" href="#aboutMe-section">About Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Me</a>
+                        <a class="nav-link" href="#contact-section">Contacts</a>
                     </li>
                 </ul>
             </div>
@@ -88,7 +88,7 @@
                     </a>
                 
                 </div>
-                <a href="#contact-form" class="btn work-with-me-btn">Work with Me</a>
+                <a href="#contact-section" class="btn work-with-me-btn">Work with Me</a>
             </div>
         </div>
     </div>
@@ -96,7 +96,7 @@
 
 
 <!-- ABOUT ME -->
-<div class="about-me-section"  data-aos="fade-zoom-in"
+<div class="about-me-section"  id="aboutMe-section" data-aos="fade-zoom-in"
 data-aos-easing="ease-in-back"
 data-aos-delay="300"
 data-aos-offset="0">
@@ -106,7 +106,7 @@ data-aos-offset="0">
                     <img src="static/billie.png" alt="John Vincent C. Obispo" class="profile-image">
                     <p class="name"><strong>John Vincent C. Obispo</strong></p>
                     <p class="location">Zamboanga City, Philippines</p>
-                    <p class="email"><a href="mailto:johnvincent.obispo@gmail.com">johnvincent.obispo@gmail.com</a></p>
+                    <p class="email"><a href="mailto:johnvincent.obispo@gmail.com" style="color: rgb(11, 0, 126);">johnvincent.obispo@gmail.com</a></p>
                     <p class="phone">+639 4576 96432</p>
                 </div>
 
@@ -128,7 +128,7 @@ data-aos-offset="0">
     </div>
 
 <!-- showcase description -->
-<section class="showcase-description" data-aos="fade-zoom-in"
+<section class="showcase-description"  id="showcase-section" data-aos="fade-zoom-in"
 data-aos-easing="ease-in-back"
 data-aos-delay="300"
 data-aos-offset="0" >
@@ -150,10 +150,7 @@ data-aos-offset="0" >
     
 
                 <!--SHOWCASES -->
-                <section class="graphic-designs"  data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="300"
-                data-aos-offset="0">
+                <section class="graphic-designs">
                 <div class="divider"></div>
                     <h1><span class="diamond-symbol">&#9670;</span> Graphic Designs</h1>
         
@@ -188,7 +185,7 @@ data-aos-offset="0" >
                         <button class="prev-graphic">&#10094;</button>
                         <button class="next-graphic">&#10095;</button>
                     </div>
-                    <div class="all-overlay" onclick="toggleGraphicInfo(document.querySelector('.graphic-card.graphic-opened'))">
+                    <div class="graphic-overlay" onclick="toggleGraphicInfo(document.querySelector('.graphic-card.graphic-opened'))">
                         <div class="graphic-info">
                             <span class="close-button" onclick="toggleGraphicInfo()">x</span>
                             <div class="graphic-content">
@@ -214,10 +211,7 @@ data-aos-offset="0" >
                 
                     
 
-                    <section class="mobile-designs"  data-aos="fade-zoom-in"
-                    data-aos-easing="ease-in-back"
-                    data-aos-delay="300"
-                    data-aos-offset="0">
+                    <section class="mobile-designs"  >
                     <div class="divider"></div>
                     <h1><span class="circle-symbol">&#9679;</span> Mobile Applications</h1>
         
@@ -252,7 +246,7 @@ data-aos-offset="0" >
                         <button class="prev-mobile">&#10094;</button>
                         <button class="next-mobile">&#10095;</button>
                     </div>
-                    <div class="all-overlay" onclick="toggleMobileInfo(document.querySelector('.mobile-card.mobile-opened'))">
+                    <div class="mobile-overlay" onclick="toggleMobileInfo(document.querySelector('.mobile-card.mobile-opened'))">
                         <div class="mobile-info">
                             <span class="close-button" onclick="toggleMobileInfo()">x</span>
                             <div class=" mobile-content">
@@ -277,10 +271,7 @@ data-aos-offset="0" >
                 
 
 
-                <section class="desktop-designs"  data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="300"
-                data-aos-offset="0">
+                <section class="desktop-designs" >
                 <div class="divider"></div>
                     <h1><span class="triangle-symbol">&#9650;</span> Desktop Applications</h1>
                 
@@ -340,10 +331,7 @@ data-aos-offset="0" >
                 
                 
                                     
-                <section class="website-designs"  data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="300"
-                data-aos-offset="0">
+                <section class="website-designs" >
                 <div class="divider"></div>
                     <h1><span class="square-symbol">&#9632;</span> Website</h1>
             
@@ -403,14 +391,16 @@ data-aos-offset="0" >
 
 
             <!-- CONTACT ME -->
-            <div class="background-black">
-            <div class="contact-container">
-                <div class="contact-info">
+            <div class="contact-container" id="contact-section" data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="300"
+            data-aos-offset="0">
+                <div class="contact-info" >
                   <h2>Contact</h2>
                   <div class="info-section">
                     <span class="icon">&#128172;</span>
                     <div class="info">
-                      <h3>Ask me?</h3>
+                      <h3 style="color: orange;">Ask me?</h3>
                       <p>I'm here to answer your questions. johnvincent.obispo@gmail.com</p>
                     </div>
                   </div>
@@ -418,7 +408,7 @@ data-aos-offset="0" >
                   <div class="info-section">
                     <span class="icon">&#128222;</span>
                     <div class="info">
-                      <h3>Call Me</h3>
+                      <h3 style="color: orangered">Call Me</h3>
                       <p>Mon-Fri from 8am to 11pm. +639 4576 96432</p>
                     </div>
                   </div>
@@ -430,13 +420,33 @@ data-aos-offset="0" >
                     <input type="email" placeholder="Email *" required>
                     <input type="text" placeholder="Subject *" required>
                     <textarea placeholder="Your message *" required></textarea>
-                    <button type="submit">Send Message</button>
+                    <button type="submit" >Send Message</button>
                   </form>
                 </div>
               </div>
-            </div>
         
 
+
+
+
+
+
+
+              <!-- redirection -->
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
+                
+                            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        });
+                    });
+                });
+                </script>
+                
                 <!--HEADER IMAGE CHANGE-->
                     <script>
                     var imageUrls = [
@@ -517,7 +527,7 @@ data-aos-offset="0" >
 
     updateDisplay();
 
-    var overlay = document.querySelector('.all-overlay');
+    var overlay = document.querySelector('.graphic-overlay');
 
     graphicCards.forEach(function(card) {
         card.addEventListener('click', function() {
@@ -566,7 +576,7 @@ function toggleGraphicInfo() {
              <script>
                    document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.all-overlay .carousel-images img');
+    const slides = document.querySelectorAll('.mobile-overlay .carousel-images img');
     const totalSlides = slides.length;
 
     function showSlide(index) {
@@ -585,11 +595,11 @@ function toggleGraphicInfo() {
 
     showSlide(currentSlide);
 
-    document.querySelector('.all-overlay .prev').addEventListener('click', function() {
+    document.querySelector('.mobile-overlay .prev').addEventListener('click', function() {
         moveSlide(-1);
     });
 
-    document.querySelector('.all-overlay .next').addEventListener('click', function() {
+    document.querySelector('.mobile-overlay .next').addEventListener('click', function() {
         moveSlide(1);
     });
 
@@ -615,7 +625,7 @@ function toggleGraphicInfo() {
 
     updateDisplay();
 
-    var overlay = document.querySelector('.all-overlay');
+    var overlay = document.querySelector('.mobile-overlay');
 
     mobileCards.forEach(function(card) {
         card.addEventListener('click', function() {
