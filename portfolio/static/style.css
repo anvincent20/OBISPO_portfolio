@@ -9,8 +9,20 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-}
+    }
 
+    #follower {
+        position: absolute;
+        width: 40px; 
+        height: 40px; 
+        border-radius: 50%;
+        background-color: transparent; 
+        background-size: cover;
+        background-position: center;
+        pointer-events: none;
+        transition: background-color 0.3s, background-image 0.3s; 
+    }
+    
 /* General navbar styles */
 .navbar-expand-lg {
     padding: 0.5rem 1rem; 
@@ -130,6 +142,10 @@ body {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
     }
 
+    .text-left {
+        text-align: left;
+    }
+    
     .custom-table img {
         width: 100px; 
         height: auto;
@@ -175,7 +191,7 @@ body {
     .profile-text-container {
         text-align: center;
         padding: 20px;
-        font-family: 'Poppins', sans-serif; /* Consistent font for readability */
+        font-family: 'Poppins', sans-serif;
     }
     
     .greeting {
@@ -1262,6 +1278,18 @@ background-color: rgb(212, 69, 8);
     transform: rotate(45deg); 
 }
 
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(2px, 2px); }
+    50% { transform: translate(-2px, -2px); }
+    75% { transform: translate(2px, -2px); }
+    100% { transform: translate(-2px, 2px); }
+  }
+  
+  .vibrating {
+      animation: vibrate 0.1s linear infinite;
+  }
+  
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
@@ -1304,11 +1332,11 @@ background-color: rgb(212, 69, 8);
     .showcase-left, .showcase-right {
         justify-content: center; /* Center content on small screens */
         text-align: center; /* Center text on small screens */
-        padding: 15px 0; /* Padding for small screens */
+        padding: 15px 0; 
     }
 
     .showcase-title {
-        justify-content: center; /* Center title on small screens */
+        justify-content: center; 
     }
 }
   
@@ -1331,6 +1359,6 @@ background-color: rgb(212, 69, 8);
 }
 @media (max-width: 992px) {
     .navbar-container {
-        flex-direction: column; /* Stack items vertically on smaller screens */
+        flex-direction: column; 
     }
 }
