@@ -21,10 +21,7 @@
 <link href="static/style.css" rel="stylesheet">
   
 </head>
-<style>
 
-
-</style>
 <body>
 
     
@@ -32,12 +29,12 @@
     <nav class="navbar-expand-lg navbar-light ">
         <div class=" navbar-container">
             <img src="static/logo.png" alt="John Vincent C. Obispo" class="nav-image">
-            <a class="navbar-brand" href="#">John Vincent Obispo</a>
+            <a class="navbar-brand" href="#" style="font-weight: 700;">John Vincent Obispo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto" style="font-weight: 500;">
                     <li class="nav-item">
                         <a class="nav-link" href="#showcase-section" style="color: crimson">Showcase</a>
                     </li>
@@ -56,7 +53,6 @@
 
 
 
-    <div id="follower"></div>
     
 
 
@@ -69,7 +65,7 @@
             <div class="col-md-6 align-self-center profile-text-container">
                 <div class="text-left">
                     <h1 class="greeting display-1" style="font-weight: 600;">Hello!</h1>
-                    <p class="introduction lead">
+                    <p class="introduction lead" >
                         I'm Vincent, a Web developer and Software Developer based in Zamboanga City.
                     </p>
                 </div>
@@ -118,7 +114,7 @@ data-aos-offset="0">
                         <h2>About Me</h2>
                     </div>
                     <div class="summary-section">
-                        <p>Versatile Software and Web Developer with a flair for creating user-centric digital solutions and robust databases using HTML, CSS, JavaScript, Bootstrap, Flutter, and Firebase. Experienced in the digital collectibles market, A person who brings valuable skills in market analysis, strategic negotiation, and customer service. Adept in graphic design and UI/UX, ensuring functionality meets visual appeal. Proven in project management, excels in team collaboration, and problem-solving, and adapts to evolving environments. Committed to lifelong learning and driving innovation.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, alias. Nostrum quae voluptatibus quis reiciendis aut iure deserunt repudiandae soluta magni, eius dicta voluptatem excepturi, dolorem dolor accusamus possimus veritatis.</p>
                     </div>
                     <div class="download-button-container">
                         <a href="path_to_document/Obispo_Resume.pdf" class="btn" download="John_Vincent_Obispo_Resume">
@@ -142,7 +138,7 @@ data-aos-offset="0" >
                 <h2 class="showcase-caption">JOHN VINCENT C. OBISPO</h2>
             </div>
             <div class="col-md-6 showcase-right">
-                <p class="showcase-text">A fresh blah blah to pursue blah blah</p>
+                <p class="showcase-text"> Here, you'll discover a variety of my recent work, ranging from web applications to mobile apps, all crafted to address real-world challenges while showcasing my skills and creativity.</p>
             </div>
         </div>
     </div>
@@ -153,7 +149,10 @@ data-aos-offset="0" >
     
 
                 <!--SHOWCASES -->
-                <section class="graphic-designs">
+                <section class="graphic-designs" id="showcase-section" data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="300"
+                data-aos-offset="0" >
                 <div class="divider"></div>
                     <h1><span class="diamond-symbol">&#9670;</span> Graphic Designs</h1>
         
@@ -214,7 +213,10 @@ data-aos-offset="0" >
                 
                     
 
-                    <section class="mobile-designs"  >
+                    <section class="mobile-designs" id="showcase-section" data-aos="fade-zoom-in"
+                    data-aos-easing="ease-in-back"
+                    data-aos-delay="300"
+                    data-aos-offset="0"  >
                     <div class="divider"></div>
                     <h1><span class="circle-symbol">&#9679;</span> Mobile Applications</h1>
         
@@ -274,7 +276,10 @@ data-aos-offset="0" >
                 
 
 
-                <section class="desktop-designs" >
+                <section class="desktop-designs" id="showcase-section" data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="300"
+                data-aos-offset="0"  >
                 <div class="divider"></div>
                     <h1><span class="triangle-symbol">&#9650;</span> Desktop Applications</h1>
                 
@@ -334,7 +339,10 @@ data-aos-offset="0" >
                 
                 
                                     
-                <section class="website-designs" >
+                <section class="website-designs" id="showcase-section" data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="300"
+                data-aos-offset="0" >
                 <div class="divider"></div>
                     <h1><span class="square-symbol">&#9632;</span> Website</h1>
             
@@ -844,34 +852,7 @@ function toggleGraphicInfo() {
 
                               <!-- chase animation -->
                        
-              <script>
-document.addEventListener('mousemove', (e) => {
-    const follower = document.getElementById('follower');
-    const x = e.clientX;
-    const y = e.clientY;
-
-    follower.style.left = `${x}px`;
-    follower.style.top = `${y}px`;
-
-    // Calculate distance between follower and cursor
-    const rect = follower.getBoundingClientRect();
-    const followerCenterX = rect.left + rect.width / 2;
-    const followerCenterY = rect.top + rect.height / 2;
-    const distance = Math.sqrt(Math.pow(followerCenterX - x, 2) + Math.pow(followerCenterY - y, 2));
-
-    // Define a threshold for "closeness"
-    const closeThreshold = 50; // pixels
-
-    if (distance < closeThreshold) {
-        follower.style.backgroundImage = "url('static/twocats.jpg')";
-        follower.classList.remove('vibrating');
-    } else {
-        follower.style.backgroundImage = "url('static/sadcatto.png')";
-        follower.classList.add('vibrating');
-    }
-});
-</script>
-
+         
 
     <script async src="https://tenor.com/embed.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
