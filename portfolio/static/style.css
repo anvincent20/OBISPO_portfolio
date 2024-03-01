@@ -108,6 +108,12 @@ body {
         object-fit: cover; 
     }
     
+    .background-pic {
+        width: 100px; 
+        position: absolute;
+        object-fit: cover; 
+
+    }
 
 .background-black{
     background-color: #1e1e1f;  
