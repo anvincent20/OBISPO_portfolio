@@ -71,6 +71,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
+AUTH_USER_MODEL = 'base.User'
+
 
 
 # Database
