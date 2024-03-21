@@ -7,8 +7,6 @@ class User(AbstractUser):
     first_name=models.CharField(max_length=200, null = True, blank = True)
     middle_name = models.CharField(max_length=200, null=True, blank=True)
     greeting_description = models.CharField(max_length=200, null=True, blank=True)
-    shwocase_title = models.CharField(max_length=200, null=True, blank=True)
-    project_photo = models.CharField(max_length=200, null=True, blank=True)
     last_name=models.CharField(max_length=200, null = True, blank=True)
     contact_number=models.CharField(max_length=200, null = True, blank=True)
     age = models.CharField(max_length=200, null = True, blank=True)
@@ -25,3 +23,11 @@ class User(AbstractUser):
 
     def str(self):
         return self.email or str(self.id)
+
+class Project(models.Model):
+        shwocase_title = models.CharField(max_length=200, null=True, blank=True)
+        showcase_description = models.CharField(max_length=200, null=True, blank=True)
+        project_photo = models.FileField(upload_to='images/', null=True, blank=True)
+
+    def __str__(self):
+        return self.shwocase_title

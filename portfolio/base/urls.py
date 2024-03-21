@@ -5,5 +5,6 @@ app_name = 'base'
 urlpatterns = [
     path ('', views.home, name='home'),
     path ('cms/', views.cms, name='cms'),
+    path ('introform/', views.personalprofile, name='introform'),
     
 ]

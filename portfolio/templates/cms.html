@@ -71,7 +71,8 @@
 
        <!-- intro form -->
        <div class="container" id="#intro">
-        <form>
+        <form action="{% url 'base:introform' %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
           <div class="form-group">
             <h2>Intro Form</h2>
           </div>
@@ -80,20 +81,20 @@
             <textarea class="form-control" id="greeting_description" name="greeting_description" rows="5"></textarea>
           </div>
           <div class="form-group">
-            <label for="intro_photo">Upload Photo:</label>
-            <input type="file" class="form-control-file" id="intro_photo" name="photo">
+            <label for="project">Upload Photo:</label>
+            <input type="file" class="form-control-file" id="intro_photo" name="project_photo">
           </div>
           
           <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-primary">Delete</button>
           <button type="button" class="btn btn-primary">Update</button>
         </form>
       </div>
 
     <!-- about me form -->
     <div class="container" id="#aboutMe">
-        <form>
-          <div class="form-group">
+      <form action="{% url 'base:introform' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
             <h2>About Me Form</h2>
             <label for="address">Address:</label>
             <input type="text" class="form-control" id="address" name="address">
@@ -115,14 +116,14 @@
             <input type="file" class="form-control-file" id="about_photo" name="photo">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-primary">Delete</button>
           <button type="button" class="btn btn-primary">Update</button>
         </form>
       </div>
 
          <!-- project form -->
     <div class="container" id="#project">
-        <form>
+      <form action="{% url 'base:introform' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
           <div class="form-group">
             <h2>Project Form</h2>
         
@@ -148,7 +149,8 @@
       
       <!-- socmeds -->
       <div class="container" id="#aboutMe">
-        <form>
+        <form action="{% url 'base:introform' %}" method="POST">
+          {% csrf_token %}
           
           <div class="form-group">
             <label for="facebook">Facebook:</label>
@@ -167,7 +169,6 @@
             <input type="text" class="form-control" id="email" name="email">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-primary">Delete</button>
           <button type="button" class="btn btn-primary">Update</button>
 
         </form>
