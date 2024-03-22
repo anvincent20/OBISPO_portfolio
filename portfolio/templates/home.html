@@ -64,7 +64,7 @@
                 <div class="text-left">
                     <h1 class="greeting display-1" style="font-weight: 600;">Hello!</h1>
                     <p class="introduction lead" >
-                        I'm Vincent, a Web developer and Software Developer based in Zamboanga City.
+                        {{user_data.greeting_description}}
                     </p>
                 </div>
              
@@ -100,11 +100,11 @@ data-aos-offset="0">
     <div class="container">
             <div class="row">
                 <div class="col profile-image-container">
-                    <img src="static/billie.png" alt="John Vincent C. Obispo" class="profile-image">
+                    <img src="{{user.about_photo.url}}" alt="John Vincent C. Obispo" class="profile-image">
                     <p class="name"><strong>John Vincent C. Obispo</strong></p>
-                    <p class="location">Zamboanga City, Philippines</p>
-                    <p class="email"><a href="mailto:johnvincent.obispo@gmail.com" style="color: rgb(11, 0, 126);">johnvincent.obispo@gmail.com</a></p>
-                    <p class="phone">+639 4576 96432</p>
+                    <p class="location">{{user_data.address}}</p>
+                    <p class="email"><a href="mailto:johnvincent.obispo@gmail.com" style="color: rgb(11, 0, 126);">{{user_data.email}} </a></p>
+                    <p class="phone">{{user_data.number}}</p>
                 </div>
 
                 <div class="col ">
@@ -112,7 +112,7 @@ data-aos-offset="0">
                         <h2>About Me</h2>
                     </div>
                     <div class="summary-section">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, alias. Nostrum quae voluptatibus quis reiciendis aut iure deserunt repudiandae soluta magni, eius dicta voluptatem excepturi, dolorem dolor accusamus possimus veritatis.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur maiores atque, expedita veniam aliquid exercitationem aut! Labore vel adipisci voluptates ducimus sint, mollitia, minima eius error libero, beatae nobis quidem.</p>
                     </div>
                     <div class="download-button-container">
                         <a href="path_to_document/Obispo_Resume.pdf" class="btn" download="John_Vincent_Obispo_Resume">
@@ -147,43 +147,24 @@ data-aos-offset="0" >
     
 
                 <!--SHOWCASES -->
+                <div class="divider"></div>
+                    <h1 class="title_showcase  "><span class=" text-center diamond-symbol">&#9670;</span> My Projects</h1>
                 <div class="graphic-designs" id="showcase-section" data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="300"
                 data-aos-offset="0" >
-                <div class="divider"></div>
-                    <h1><span class="diamond-symbol">&#9670;</span> My Projects</h1>
+                
         
+                    {% for project in user_data.user_project.all %}
                     <div class="graphic-container">
+
                         <div class="graphic-card" onclick="toggleGraphicInfo(this)">
-                            <img src="static/billie.png" alt="Graphic Image" class="graphic-image">
-                            <h2>Showcase Title</h2>
-                            <p>Short description about the showcase goes here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore corporis quas magni repellat ut, dolorum voluptatum maxime provident sunt consectetur ipsa, rem animi doloribus. Accusantium perferendis quas asperiores. Quas, omnis.</p>
+                            
+                            <img src="{{project.project_photo.url}}" alt="Graphic Image" class="graphic-image">
+                            <h2>{{project.showcase_title}}</h2>
+                            <p>{{project.showcase_description}}</p>
                         </div>
-                        <div class="graphic-card" onclick="toggleGraphicInfo(this)">
-                            <img src="static/billie.png" alt="Graphic Image" class="graphic-image">
-                            <h2>Showcase Title</h2>
-                            <p>Short description about the showcase goes here.</p>
-                        </div>
-                            <div class="graphic-card" onclick="toggleGraphicInfo(this)">
-                            <img src="static/billie.png" alt="Graphic Image" class="graphic-image">
-                            <h2>Showcase Title</h2>
-                            <p>Short description about the showcase goes here.</p>
-                        </div>
-                        <div class="graphic-card" onclick="toggleGraphicInfo(this)">
-                            <img src="static/billie.png" alt="Graphic Image" class="graphic-image">
-                            <h2>Showcase Title</h2>
-                            <p>TITETETETETE</p>
-                        </div>
-                        <div class="graphic-card" onclick="toggleGraphicInfo(this)">
-                            <img src="static/billie.png" alt="Graphic Image" class="graphic-image">
-                            <h2>Showcase Title</h2>
-                            <p>STETETTEET3413412412here.</p>
-                        </div>
-                    </div>
-                    <div class="graphic-controls">
-                        <button class="prev-graphic">&#10094;</button>
-                        <button class="next-graphic">&#10095;</button>
+                    
                     </div>
                     <div class="graphic-overlay" onclick="toggleGraphicInfo(document.querySelector('.graphic-card.graphic-opened'))">
                         <div class="graphic-info">
@@ -200,14 +181,21 @@ data-aos-offset="0" >
                                     <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
                                 </div>
                                 <div class="graphic-text">
-                                    <h3>Showcase Title</h3>
+                                    <h3>{{project.showcase_title}}</h3>
                                     <p>Description of the showcase goes here.</p>
                                 </div>
                             </div>
                         </div>                        
+                    
                     </div>
+                    {% endfor %}
+                  
+                    
                 </div>
-
+                <div class="graphic-controls">
+                    <button class="prev-graphic">&#10094;</button>
+                    <button class="next-graphic">&#10095;</button>
+                </div>
                 
     
             

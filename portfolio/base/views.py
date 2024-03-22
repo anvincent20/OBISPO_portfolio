@@ -4,7 +4,7 @@ from .models import *
 from .forms  import *
 
 def home(request):
-    user = User.objects.get(id=1)
+    user = User.objects.get(username='admin2')
     context = {'user_data':user}
     return render(request, 'home.html',context = context)
 
