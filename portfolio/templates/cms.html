@@ -163,8 +163,9 @@
               </div>
         
               <div class="form-group mb-4">
-                <label for="project_photo" class="form-label">Upload Photo:</label>
-                <input type="file" class="form-control-file" id="project_photo" name="project_photo">
+                <label for="project_images" class="form-label">Upload Photo:</label>
+
+                <input type="file" multiple class="form-control-file" id="project_photo" name="project_images">
               </div>
         
               <button type="submit" class="btn btn-primary rounded-pill mb-3">Submit</button>
@@ -215,7 +216,7 @@
             </div>
             <div class="form-group">
               <label for="photo{{project.id}}">Upload Photo:</label>
-              <input type="file" class="form-control-file" id="photo{{project.id}}" name="project_photo">
+              <input type="file" multiple class="form-control-file" id="photo{{project.id}}" name="project_images">
             </div>
             <input type="text" value="{{project.id}}" name="project_id" class="d-none">
             <button type="submit" class="btn btn-primary">Submit</button>

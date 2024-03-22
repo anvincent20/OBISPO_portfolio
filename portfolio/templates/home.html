@@ -160,7 +160,7 @@ data-aos-offset="0" >
 
                         <div class="graphic-card" onclick="toggleGraphicInfo(this)">
                             
-                            <img src="{{project.project_photo.url}}" alt="Graphic Image" class="graphic-image">
+                            <img src="{{project.project_imgs.all.0.url}}" alt="Graphic Image" class="graphic-image">
                             <h2>{{project.showcase_title}}</h2>
                             <p>{{project.showcase_description}}</p>
                         </div>
@@ -172,10 +172,9 @@ data-aos-offset="0" >
                             <div class="graphic-content">
                                 <div id="graphicCarousel" class="carousel">
                                     <div class="carousel-images">
-                                        <img src="static/quartz.jpg" alt="Graphic Image" class="graphic-image">
-                                        <img src="static/tyler (1).png" alt="Graphic Image" class="graphic-image">
-                                        <img src="static/logo.png" alt="Graphic Image" class="graphic-image">
-                                        <img src="static/billie.png" alt="Graphic Image" class="graphic-image">
+                                        {% for imgs in project.project_imgs.all %}
+                                        <img src="{{imgs.image.url}}" alt="Graphic Image" class="graphic-image">
+                                        {% endfor %}
                                     </div>
                                     <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
                                     <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
