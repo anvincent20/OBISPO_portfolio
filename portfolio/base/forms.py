@@ -6,23 +6,40 @@ class PeronalInfoForm(ModelForm):
         model = User
         fields = [
             'first_name',
-             'middle_name',
-              'greeting_description',
-               'shwocase_title',
-                'project_photo',
-                 'last_name',
-                  'contact_number',
-                   'age',
-                    'address',
-                     'email',
-                      'facebook_link',
-                       'github_link',
-                        'linkedin_link',
-                        'discord_link',
-                        'username',
-                        'password',
-                        'confirm_password',
-                        'about_me_context',
+            'middle_name',
+            'greeting_description',
+            'last_name',
+            'age',
+            'username',
+            'password',
+            'confirm_password',
+            'hero_photo',
+        ]
 
-                        
+class AboutMeForm(ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'address',
+            'email',
+            'contact_number',
+            'about_me_context',
+            'about_photo',
+        ]
+
+
+class ProjectForm(ModelForm):
+    class Meta:
+        model = Project
+        fields = ['showcase_title', 'showcase_description', 'project_photo']
+
+
+class SocialMediaForm(ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'facebook_link',
+            'github_link',
+            'linkedin_link',
+            'discord_link',
         ]

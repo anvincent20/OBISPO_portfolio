@@ -133,3 +133,5 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static')]
+
+LOGIN_REDIRECT_URL = 'cms'  # Replace 'cms' with your actual redirect URL name

@@ -71,7 +71,7 @@
 
        <!-- intro form -->
        <div class="container" id="#intro">
-        <form action="{% url 'base:introform' %}" method="POST" enctype="multipart/form-data">
+        <form action="{% url 'base:personalprofile' %}" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="form-group">
             <h2>Intro Form</h2>
@@ -81,8 +81,8 @@
             <textarea class="form-control" id="greeting_description" name="greeting_description" rows="5"></textarea>
           </div>
           <div class="form-group">
-            <label for="project">Upload Photo:</label>
-            <input type="file" class="form-control-file" id="intro_photo" name="project_photo">
+            <label for="hero_photo">Upload Photo:</label>
+            <input type="file" class="form-control-file" id="hero_photo" name="hero_photo">
           </div>
           
           <button type="submit" class="btn btn-primary">Submit</button>
@@ -92,7 +92,7 @@
 
     <!-- about me form -->
     <div class="container" id="#aboutMe">
-      <form action="{% url 'base:introform' %}" method="POST" enctype="multipart/form-data">
+      <form action="{% url 'base:aboutme' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
             <h2>About Me Form</h2>
@@ -105,15 +105,15 @@
           </div>
           <div class="form-group">
             <label for="number">Number:</label>
-            <input type="text" class="form-control" id="number" name="number">
+            <input type="text" class="form-control" id="number" name="contact_number">
           </div>
           <div class="form-group">
             <label for="description">Description:</label>
-            <textarea class="form-control" id="description" name="description" rows="5"></textarea>
+            <textarea class="form-control" id="description" name="about_me_context" rows="5"></textarea>
           </div>
           <div class="form-group">
             <label for="about_photo">Upload Photo:</label>
-            <input type="file" class="form-control-file" id="about_photo" name="photo">
+            <input type="file" class="form-control-file" id="about_photo" name="about_photo">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
           <button type="button" class="btn btn-primary">Update</button>
@@ -122,23 +122,23 @@
 
          <!-- project form -->
     <div class="container" id="#project">
-      <form action="{% url 'base:introform' %}" method="POST" enctype="multipart/form-data">
+      <form action="{% url 'base:project' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
           <div class="form-group">
             <h2>Project Form</h2>
         
           </div>
           <div class="form-group">
-            <label for="shwocase_title">Showcase Title:</label>
-            <textarea class="form-control" id="shwocase_title" name="shwocase_title" rows="5"></textarea>
+            <label for="showcase_title">Showcase Title:</label>
+            <textarea class="form-control" id="showcase_title" name="showcase_title" rows="5"></textarea>
           </div>
           <div class="form-group">
-            <label for="shwocase_description">Showcase Description:</label>
-            <textarea class="form-control" id="shwocase_description" name="shwocase_description" rows="5"></textarea>
+            <label for="showcase_description">Showcase Description:</label>
+            <textarea class="form-control" id="showcase_description" name="showcase_description" rows="5"></textarea>
           </div>
           <div class="form-group">
             <label for="project_photo">Upload Photo:</label>
-            <input type="file" class="form-control-file" id="photo" name="photo">
+            <input type="file" class="form-control-file" id="photo" name="project_photo">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
           <button type="button" class="btn btn-primary">Delete</button>
@@ -149,24 +149,24 @@
       
       <!-- socmeds -->
       <div class="container" id="#aboutMe">
-        <form action="{% url 'base:introform' %}" method="POST">
+        <form action="{% url 'base:socialmedia' %}" method="POST">
           {% csrf_token %}
           
           <div class="form-group">
-            <label for="facebook">Facebook:</label>
-            <input type="text" class="form-control" id="email" name="email">
+            <label for="facebook_link">Facebook:</label>
+            <input type="text" class="form-control" id="facebook_link" name="facebook_link">
           </div>
           <div class="form-group">
-            <label for="github">Github:</label>
-            <input type="text" class="form-control" id="email" name="email">
+            <label for="github_link">Github:</label>
+            <input type="text" class="form-control" id="github_link" name="github_link">
           </div>
           <div class="form-group">
-            <label for="linkedin">Linkedin:</label>
-            <input type="text" class="form-control" id="email" name="email">
+            <label for="linkedin_link">Linkedin:</label>
+            <input type="text" class="form-control" id="linkedin_link" name="linkedin_link">
           </div>
           <div class="form-group">
-            <label for="discord">Discord:</label>
-            <input type="text" class="form-control" id="email" name="email">
+            <label for="discord_link">Discord:</label>
+            <input type="text" class="form-control" id="discord_link" name="discord_link">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
           <button type="button" class="btn btn-primary">Update</button>
