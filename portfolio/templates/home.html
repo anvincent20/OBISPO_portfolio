@@ -160,7 +160,7 @@ data-aos-offset="0" >
 
                         <div class="graphic-card" onclick="toggleGraphicInfo(this)">
                             
-                            <img src="{{project.project_imgs.all.0.url}}" alt="Graphic Image" class="graphic-image">
+                            <img src="{{project.project_imgs.all.0.image.url}}" alt="Graphic Image" class="graphic-image">
                             <h2>{{project.showcase_title}}</h2>
                             <p>{{project.showcase_description}}</p>
                         </div>
@@ -181,7 +181,7 @@ data-aos-offset="0" >
                                 </div>
                                 <div class="graphic-text">
                                     <h3>{{project.showcase_title}}</h3>
-                                    <p>Description of the showcase goes here.</p>
+                                    <p>{{project.showcase_description}}</p>
                                 </div>
                             </div>
                         </div>                        
