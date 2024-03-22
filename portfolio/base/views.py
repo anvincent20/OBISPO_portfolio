@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms  import *
@@ -8,18 +8,28 @@ def home(request):
     context = {'user_data':user}
     return render(request, 'home.html',context = context)
 
+
+@login_required(login_url="/auth/login/")
 def cms(request):
-    return render(request, 'cms.html')
+    user = request.user
+    print(user)
+    context = {'user_data':user}
+    return render(request, 'cms.html',context=context)
     
 #Into Form
-@login_required
+@login_required(login_url="/auth/login/")
 def personalprofile(request):
     user = request.user
     if request.method == 'POST':
-        form = PeronalInfoForm(request.POST, request.FILES, instance=user)
+        form = PeronalInfoForm(request.POST, request.FILES)
         if form.is_valid():
+
             try:
-                form.save() 
+                cleaned_data = form.cleaned_data
+                for field, value in cleaned_data.items():
+                    if value: 
+                        setattr(user, field, value)
+                user.save()
                 return redirect('base:cms')
             except Exception as e:
                 print(f"Error:{e}")
@@ -31,14 +41,18 @@ def personalprofile(request):
     return redirect('base:cms')
 
 #About Me Form
-@login_required
+@login_required(login_url="/auth/login/")
 def aboutme(request):
     user = request.user
     if request.method == 'POST':
-        form = AboutMeForm(request.POST, request.FILES, instance=user)
+        form = AboutMeForm(request.POST, request.FILES)
         if form.is_valid():
             try:
-                form.save() 
+                cleaned_data = form.cleaned_data
+                for field, value in cleaned_data.items():
+                    if value: 
+                        setattr(user, field, value)
+                user.save()
                 return redirect('base:cms')
             except Exception as e:
                 print(f"Error:{e}")
@@ -49,8 +63,34 @@ def aboutme(request):
 
     return render(request, 'cms.html')
 
-#Project Form
-@login_required
+
+#Social Media Form
+@login_required(login_url="/auth/login/")
+def socialmedia(request):
+    user = request.user
+    if request.method == 'POST':
+        form = SocialMediaForm(request.POST, request.FILES)
+        if form.is_valid():
+            try:
+                cleaned_data = form.cleaned_data
+                for field, value in cleaned_data.items():
+                    if value: 
+                        setattr(user, field, value)
+                user.save()
+                return redirect('base:cms')
+            except Exception as e:
+                print(f"Error:{e}")
+        else:
+                print(form.errors)
+    else:
+            form = SocialMediaForm()
+
+    return render(request, 'cms.html')
+
+
+                        #PROJECT FORM
+#CREATE PROJECT
+@login_required(login_url="/auth/login/")
 def project(request):
     user = request.user
     if request.method == 'POST':
@@ -72,21 +112,33 @@ def project(request):
 
     return render(request, 'cms.html')
 
-#Social Media Form
-@login_required
-def socialmedia(request):
-    user = request.user
-    if request.method == 'POST':
-        form = SocialMediaForm(request.POST, request.FILES, instance=user)
-        if form.is_valid():
-            try:
-                form.save() 
-                return redirect('base:cms')
-            except Exception as e:
-                print(f"Error:{e}")
-        else:
-                print(form.errors)
-    else:
-            form = SocialMediaForm()
+# UPDATE PROJECT
+@login_required(login_url="/auth/login/")
+def updateproject(request):
+    if request.method == "POST":
+        user = request.user
+        try:
+            project = Project.objects.get(user = user, id=request.POST.get('project_id'))
 
-    return render(request, 'cms.html')
+            for field, value in request.POST.items():
+                if value: 
+                    setattr(project, field, value)
+            project.save()
+            return redirect('base:cms')
+        except Exception as e:
+            print(e)
+            return redirect('base:cms')
+
+# DELETE PROJECT
+@login_required(login_url="/auth/login/")
+def deleteproject(request):
+
+    if request.method == "POST":
+        user = request.user
+        try:
+            project = Project.objects.get(user = user, id=request.POST.get('project_id'))
+            project.delete()
+            return redirect('base:cms')
+        except Exception as e:
+            print(e)
+            return redirect('base:cms')

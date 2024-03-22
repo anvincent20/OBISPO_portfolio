@@ -9,10 +9,11 @@ urlpatterns = [
     #POST REQUEST ENDPOINTS
     path ('personalprofile/', views.personalprofile, name='personalprofile'),
     path ('aboutme/', views.aboutme, name='aboutme'),
-    path ('project/', views.project, name='project'),
     path ('socialmedia/', views.socialmedia, name='socialmedia'),
 
+    #PROJECTS
+    path ('project/', views.project, name='project'),
+    path ('updateproject/', views.updateproject, name='updateproject'),
+    path ('deleteproject/', views.deleteproject, name='deleteproject'),
 
-
-    
 ]

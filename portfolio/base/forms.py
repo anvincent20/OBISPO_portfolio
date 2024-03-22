@@ -10,9 +10,6 @@ class PeronalInfoForm(ModelForm):
             'greeting_description',
             'last_name',
             'age',
-            'username',
-            'password',
-            'confirm_password',
             'hero_photo',
         ]
 

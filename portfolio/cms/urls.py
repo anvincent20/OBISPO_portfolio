@@ -5,5 +5,4 @@ app_name = "cms"
 
 urlpatterns = [
     path('login/', signin, name="signin"),
-
 ]
