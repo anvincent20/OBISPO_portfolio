@@ -28,7 +28,7 @@ class AboutMeForm(ModelForm):
 class ProjectForm(ModelForm):
     class Meta:
         model = Project
-        fields = ['showcase_title', 'showcase_description', 'project_photo']
+        fields = ['showcase_title', 'showcase_description']
 
 
 class SocialMediaForm(ModelForm):

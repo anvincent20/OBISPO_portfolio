@@ -34,3 +34,8 @@ class Project(models.Model):
 
     def __str__(self):
         return self.showcase_title
+
+
+class ProjectImage(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="project_imgs")
+    image = models.FileField(upload_to='project_images/', null=True, blank=True)

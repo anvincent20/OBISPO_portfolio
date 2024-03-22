@@ -4,7 +4,7 @@ from .models import *
 from .forms  import *
 
 def home(request):
-    user = User.objects.get(id=1)
+    user = User.objects.get(username="admin")
     context = {'user_data':user}
     return render(request, 'home.html',context = context)
 
@@ -12,7 +12,6 @@ def home(request):
 @login_required(login_url="/auth/login/")
 def cms(request):
     user = request.user
-    print(user)
     context = {'user_data':user}
     return render(request, 'cms.html',context=context)
     
@@ -101,7 +100,12 @@ def project(request):
                 instance.user = user
                 instance.save()
 
-                print(instance)
+
+                project_images = []
+                for image_file in request.FILES.getlist('project_images'):
+                    project_images.append(ProjectImage(project=instance, image=image_file))
+
+                ProjectImage.objects.bulk_create(project_images)
                 return redirect('base:cms')
             except Exception as e:
                 print(f"Error:{e}")
@@ -118,12 +122,26 @@ def updateproject(request):
     if request.method == "POST":
         user = request.user
         try:
-            project = Project.objects.get(user = user, id=request.POST.get('project_id'))
+            project = Project.objects.get(user=user, id=request.POST.get('project_id'))
 
-            for field, value in request.POST.items():
-                if value: 
-                    setattr(project, field, value)
+            # Update existing project fields efficiently
+            updated_fields = {field: value for field, value in request.POST.items() if field != 'project_id'}
+            project.__dict__.update(updated_fields)
+
+            # Save the updated project instance
             project.save()
+
+            # Handle uploaded project images (if any)
+            if request.FILES.getlist('project_images'):
+                ProjectImage.objects.filter(project=project).delete()
+                project_images = []
+                for image_file in request.FILES.getlist('project_images'):
+                    project_images.append(ProjectImage(project=project, image=image_file))
+
+                # Bulk create ProjectImage objects efficiently
+                ProjectImage.objects.bulk_create(project_images)
+
+
             return redirect('base:cms')
         except Exception as e:
             print(e)
