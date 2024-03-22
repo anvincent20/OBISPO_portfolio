@@ -17,12 +17,12 @@ def signin(request):
             
     return render(request, 'signin.html')
 
-@login_required
+@login_required(login_url="/auth/login/")
 def signout(request):
     logout(request)  
     return redirect(reverse("base:home"))
 
-@login_required
+@login_required(login_url="/auth/login/")
 def changepass(request):  
 
     if request.method == "POST":
