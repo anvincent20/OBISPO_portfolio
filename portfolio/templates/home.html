@@ -26,70 +26,50 @@
 
 
     <!-- Navbar content -->
+    <div id="hero" class="hero">
+ 
+        <div class="content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Discover my work and skills</p>
+            <button id="showPortfolioBtn" class="btn">View Portfolio</button>
+        </div>
+    </div>
 
-
+    <div id="portfolio" style="display: none;">
+        <div class=" video-container ">
+            
     <nav class="navbar-expand-lg navbar-light ">
         <div class=" navbar-container">
             <img src="static/logo.png" alt="John Vincent C. Obispo" class="nav-image">
-            <a class="navbar-brand" href="#" style="font-weight: 700;">John Vincent Obispo</a>
+            <a class="navbar-brand" href="#" style="font-weight: 700; color: white;">John Vincent Obispo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto" style="font-weight: 500;">
                     <li class="nav-item">
-                        <a class="nav-link" href="#showcase-section" style="color: crimson">Showcase</a>
+                        <a class="nav-link" href="#showcase-section" style="color: white;">Showcase</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#aboutMe-section">About Me</a>
+                        <a class="nav-link" href="#aboutMe-section" style="color: white;">About Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact-section">Contacts</a>
+                        <a class="nav-link" href="#contact-section" style="color: white;">Contact Me</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <video autoplay loop muted>
+        <source src="static/helo (1).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+</div>
 
 
 
-
-    <!-- Table with image and text -->
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-md-6 text-center profile-image-container">
-                <img id="imageSlider" src="static/OBISPO_BSIT4A (1).png" alt="John Vincent Obispo" class="img-fluid rounded-image">
-            </div>
-            <div class="col-md-6 align-self-center profile-text-container">
-                <div class="text-left">
-                    <h1 class="greeting display-1" style="font-weight: 600;">Hello!</h1>
-                    <p class="introduction lead" >
-                        {{user_data.greeting_description}}
-                    </p>
-                </div>
-             
-                <div class="social-media-icons">
-                    <a href="https://twitter.com/yourusername" target="_blank" class="icon-container twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://instagram.com/yourusername" target="_blank" class="icon-container instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://facebook.com/yourusername" target="_blank" class="icon-container facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://pinterest.com/yourusername" target="_blank" class="icon-container pinterest">
-                        <i class="fab fa-pinterest"></i>
-                    </a>
-                
-                </div>
-                <a href="#contact-section" class="btn work-with-me-btn">Work with Me</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="divider"></div>
-
+<div class="divider"></div>
 
 <!-- ABOUT ME -->
 <div class="about-me-section"  id="aboutMe-section" data-aos="fade-zoom-in"
@@ -105,6 +85,21 @@ data-aos-offset="0">
                     <p class="location">{{user_data.address}}</p>
                     <p class="email"><a href="mailto:johnvincent.obispo@gmail.com" style="color: rgb(11, 0, 126);">{{user_data.email}} </a></p>
                     <p class="phone">{{user_data.number}}</p>
+                    <div class="social-media-icons">
+                        <a href="https://twitter.com/yourusername" target="_blank" class="icon-container twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/yourusername" target="_blank" class="icon-container instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/yourusername" target="_blank" class="icon-container facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://pinterest.com/yourusername" target="_blank" class="icon-container pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    
+                    </div>
                 </div>
 
                 <div class="col ">
@@ -112,7 +107,7 @@ data-aos-offset="0">
                         <h2>About Me</h2>
                     </div>
                     <div class="summary-section">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur maiores atque, expedita veniam aliquid exercitationem aut! Labore vel adipisci voluptates ducimus sint, mollitia, minima eius error libero, beatae nobis quidem.</p>
+                        <p>{{user_data.greeting_description}}</p>
                     </div>
                     <div class="download-button-container">
                         <a href="path_to_document/Obispo_Resume.pdf" class="btn" download="John_Vincent_Obispo_Resume">
@@ -124,31 +119,48 @@ data-aos-offset="0">
         </div>
     </div>
 
-<!-- showcase description -->
-<section class="showcase-description"  id="showcase-section" data-aos="fade-zoom-in"
-data-aos-easing="ease-in-back"
-data-aos-delay="300"
-data-aos-offset="0" >
-    <div class="showcase-container">
-        <div class="row">
-            <div class="col-md-6 showcase-left">
-                <p class="showcase-title"><span class="square-symbol-showcase ">&#9632;</span> SHOWCASE</p>
-                <h2 class="showcase-caption">JOHN VINCENT C. OBISPO</h2>
-            </div>
-            <div class="col-md-6 showcase-right">
-                <p class="showcase-text"> Here, you'll discover a variety of my recent work, ranging from web applications to mobile apps, all crafted to address real-world challenges while showcasing my skills and creativity.</p>
+    <section class="showcase-description"  id="showcase-section" data-aos="fade-zoom-in"
+    data-aos-easing="ease-in-back"
+    data-aos-delay="300"
+    data-aos-offset="0" >
+        <div class="showcase-container" >
+            <div class="row">
+                <div class="col-md-6 showcase-left">
+                    <p class="showcase-title"><span class="square-symbol-showcase  ">&#9632;</span> SHOWCASE</p>
+                    <h2 class="showcase-caption typewriter">JOHN VINCENT C. OBISPO</h2>
+                </div>
+                <div class="col-md-6 showcase-right">
+                    <p class="showcase-text"> Here, you'll discover a variety of my recent work, ranging from web applications to mobile apps, all crafted to address real-world challenges while showcasing my skills and creativity.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
+    <div class="divider1"></div>
 
+        <!-- Table with image and text -->
+        <div class="container my-5" style="background-color: white;">
     
+            <div class="row">
+                <div class="col-md-6 text-center profile-image-container">
+                    <img id="imageSlider" src="static/OBISPO_BSIT4A (1).png" alt="John Vincent Obispo" class="img-fluid rounded-image">
+                </div>
+                <div class="col-md-6 align-self-center profile-text-container">
+                    <div class="text-left">
+                        <h1 class="greeting display-1" style="font-weight: 600;">Showcase.</h1>
+                    </div>
+                 
+                    <a href="#contact-section" class="btn work-with-me-btn">Work with Me</a>
+                </div>
+            </div>
+        </div>
+            
+       
 
                 <!--SHOWCASES -->
-                <div class="divider"></div>
-                    <h1 class="title_showcase  "><span class=" text-center diamond-symbol">&#9670;</span> My Projects</h1>
+             
+                    <h1 class="title_showcase  "><span class=" text-center diamond-symbol">&#9670;</span> Exhibit</h1>
                 <div class="graphic-designs" id="showcase-section" data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="300"
@@ -195,10 +207,8 @@ data-aos-offset="0" >
                     <button class="prev-graphic">&#10094;</button>
                     <button class="next-graphic">&#10095;</button>
                 </div>
-                
-    
-            
-                  
+
+                <div class="divider2">
             <!-- CONTACT ME -->
             <div class="contact-container" id="contact-section" data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
@@ -233,7 +243,19 @@ data-aos-offset="0" >
                   </form>
                 </div>
               </div>
-        
+            </div>
+            </div>
+
+            <script>
+                // JavaScript to toggle the visibility of the portfolio section
+                document.getElementById('showPortfolioBtn').addEventListener('click', function() {
+                    // Hide the hero section
+                    document.getElementById('hero').style.display = 'none';
+            
+                    // Show the portfolio section
+                    document.getElementById('portfolio').style.display = 'block';
+                });
+            </script>
 
               <!-- redirection -->
               <script>

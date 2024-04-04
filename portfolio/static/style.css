@@ -2,13 +2,61 @@
     box-sizing: border-box;
 }
 
+.hero {
+    position: relative;
+    height: 100vh; 
+    background: #f8f9fa; 
+}
 
 
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    z-index: -1;
+}
+
+.video-container{
+    position: relative;
+    width: 100vw; 
+    height: 100vh;
+    overflow: hidden; 
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; 
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #100f0f; 
+}
+
+.content p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: #444141;
+}
+
+#portfolio {
+    display: none;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
     }
 
     #follower {
@@ -26,7 +74,7 @@ body {
 /* General navbar styles */
 .navbar-expand-lg {
     padding: 0.5rem 1rem; 
-    background-color: #ffffff;
+
     /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
     border-bottom: 2px solid #f0f0f0;  */
 }
@@ -628,7 +676,6 @@ input:focus, textarea:focus {
 /* SHOWCASE */
 .showcase-description {
     color: #333;
-    background: #f9f9f9;
     padding: 2rem 0; 
     margin: 0 auto; 
 }
@@ -721,12 +768,24 @@ input:focus, textarea:focus {
 
 /* divider */
 .divider {
-    width: 90%;
+    width: 100%;
+    height: 50px; 
+    background-color: #E21A0C;
+
+}
+.divider1 {
+    width: 100%;
     height: 1px; 
-    background-color: #dbdada; 
-    margin: 20px auto; 
+    background-color: #E21A0C;
+
 }
 
+.divider2 {
+    width: 100%;
+    height: 100%; 
+    background-color: #FFAF45;
+
+}
 /* styles */
 
 .square-symbol {
@@ -760,19 +819,28 @@ input:focus, textarea:focus {
     transform: rotate(45deg); 
     
 }
+.typewriter {
+    overflow: hidden; /* Ensures text is hidden initially */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
 
-@keyframes vibrate {
-    0% { transform: translate(0); }
-    25% { transform: translate(2px, 2px); }
-    50% { transform: translate(-2px, -2px); }
-    75% { transform: translate(2px, -2px); }
-    100% { transform: translate(-2px, 2px); }
-  }
-  
-  .vibrating {
-      animation: vibrate 0.1s linear infinite;
-  }
-  
+.typewriter::after {
+    content: "|"; /* Initial blinking cursor */
+    animation: blink-caret .75s step-end infinite;
+    display: inline-block;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { opacity: 1; } /* Ensure the cursor is always visible */
+    50% { opacity: 0; }
+}
+
+
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
