@@ -625,6 +625,14 @@ input:focus, textarea:focus {
     border-radius: 5px; 
 }
 
+.carousel_img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    border-radius: 5px; 
+}
 .graphic-card:hover .graphic-image {
     transform: scale(1.05);
 }
