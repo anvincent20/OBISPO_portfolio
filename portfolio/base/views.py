@@ -5,6 +5,11 @@ from .forms  import *
 
 def home(request):
     user = User.objects.get(username='admin2')
+    for project in user.user_project.all():
+        print(project.showcase_title)
+        for image in project.project_imgs.all():
+            print(f"\t- {image.image.url}") 
+
     context = {'user_data':user}
     return render(request, 'home.html',context = context)
 
@@ -89,6 +94,8 @@ def socialmedia(request):
 
 
                         #PROJECT FORM
+
+
 #CREATE PROJECT
 @login_required(login_url="/auth/login/")
 def project(request):
