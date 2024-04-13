@@ -7,7 +7,7 @@
     height: 100vh; 
     background: #f8f9fa; 
 }
-
+    
 
 
 video {
@@ -34,6 +34,7 @@ video {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 1; 
+    transition: opacity 0.5s ease;
 }
 
 .content h1 {
@@ -50,7 +51,9 @@ video {
 
 #portfolio {
     display: none;
+    opacity: 0;
 }
+
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -546,15 +549,16 @@ input:focus, textarea:focus {
 }
 
 .graphic-overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
     justify-content: center;
     align-items: center;
-    z-index: 999; 
 }
 
 .graphic-info {
@@ -570,40 +574,18 @@ input:focus, textarea:focus {
     margin: 0 10px;
     text-align: center;
 }
-
-.carousel {
-    position: relative;
+.modal-img {
+    max-width: fit-content;
+    max-height: 100vh; 
+    margin: auto; 
+  
 }
 
-.carousel-images img {
-    width: 100%;
-    display: none;
-}
 
-.carousel-images img.active {
-    display: block;
+.table-container {
+    max-height: 400px; /* Set the maximum height for the table container */
+    overflow: auto; /* Enable vertical scrolling */
 }
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #5d5b5b;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 100;
-}
-
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
-}
-
 
 .close-button {
     position: absolute;
@@ -625,57 +607,13 @@ input:focus, textarea:focus {
     border-radius: 5px; 
 }
 
-.carousel_img {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
-    border-radius: 8px;
-    border-radius: 5px; 
-}
+
+
 .graphic-card:hover .graphic-image {
     transform: scale(1.05);
 }
 
-.graphic-text {
-    text-align: left;
-}
 
-
-.graphic-card h2, .graphic-card{
-    margin: 0 0 10px; 
-    font-size: 1.2rem; 
-    padding: 0.5rem 0;
-}
-
-.graphic-card p {
-    margin: 0;
-    font-size: 0.9rem; 
-}
-
-
-
-.graphic-controls {
-    text-align: center;
-    margin: 1rem 0;
-}
-
-.prev-graphic,
-.next-graphic {
-    cursor: pointer;
-    padding: 10px 15px;
-    background-color: #043c90;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.prev-graphic:hover,
-.next-graphic:hover {
-    background-color: #0d3b66;
-}
 
 
 
@@ -752,27 +690,40 @@ input:focus, textarea:focus {
     border-radius: 20px;
   }
   
-  .admin-container .card .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
+
   
   .admin-container .card .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #127e03;
+    border-color: #127e03;
   }
   
+  .btn-primary{
+    background-color: #38942c;
+    border-color: #27831a;
+
+  }
   .admin-container .card .btn-outline-secondary {
-    color: #6c757d;
+    color: #ffffff;
     border-color: #6c757d;
   }
+
+
   
   .admin-container .card .btn-outline-secondary:hover {
-    color: #495057;
+    color: #ffffff;
     background-color: rgba(108, 117, 125, 0.2);
-    border-color: #6c757d;
+    border-color: #c55f00;
   }
   
+  .btn-danger{
+    background-color: #831212;
+    border-color: #831212;
+  }
+
+  .btn-danger:hover{
+    background-color: #630000;
+    border-color: #630000;
+  }
 
 /* divider */
 .divider {
@@ -791,7 +742,7 @@ input:focus, textarea:focus {
 .divider2 {
     width: 100%;
     height: 100%; 
-    background-color: #FFAF45;
+    background-color: rgba(238, 137, 6, 0.774)
 
 }
 /* styles */
@@ -828,23 +779,33 @@ input:focus, textarea:focus {
     
 }
 .typewriter {
-    overflow: hidden; /* Ensures text is hidden initially */
-    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden;
+    white-space: nowrap; 
 }
 
 .typewriter::after {
-    content: "|"; /* Initial blinking cursor */
+    content: "|"; 
     animation: blink-caret .75s step-end infinite;
     display: inline-block;
 }
 
+
+
+.cms-body{
+    margin: 0;
+    padding: 0;
+   background-color: #0e0e0d;
+
+
+    
+}
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
 
 @keyframes blink-caret {
-    from, to { opacity: 1; } /* Ensure the cursor is always visible */
+    from, to { opacity: 1; } 
     50% { opacity: 0; }
 }
 
@@ -889,8 +850,8 @@ input:focus, textarea:focus {
 
 @media (max-width: 768px) {
     .showcase-left, .showcase-right {
-        justify-content: center; /* Center content on small screens */
-        text-align: center; /* Center text on small screens */
+        justify-content: center; 
+        text-align: center; 
         padding: 15px 0; 
     }
 

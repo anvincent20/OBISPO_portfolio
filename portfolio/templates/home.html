@@ -25,7 +25,7 @@
 <body>
 
 
-    <!-- Navbar content -->
+    <!-- intro -->
     <div id="hero" class="hero">
  
         <div class="content">
@@ -34,9 +34,11 @@
             <button id="showPortfolioBtn" class="btn">View Portfolio</button>
         </div>
     </div>
-
+<!-- VIDEO -->
     <div id="portfolio" style="display: none;">
         <div class=" video-container ">
+            
+            <!-- Navbar content -->
             
     <nav class="navbar-expand-lg navbar-light ">
         <div class=" navbar-container">
@@ -158,56 +160,35 @@ data-aos-offset="0">
             
        
 
-                <!--SHOWCASES -->
+                <!--exhibit -->
              
                     <h1 class="title_showcase  "><span class=" text-center diamond-symbol">&#9670;</span> Exhibit</h1>
-                <div class="graphic-designs" id="showcase-section" data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="300"
-                data-aos-offset="0" >
-                
-        
-                    {% for project in user_data.user_project.all %}
-                    <div class="graphic-container">
-
-                        <div class="graphic-card" onclick="toggleGraphicInfo(this)">
-                            
-                            <img src="{{project.project_imgs.all.0.image.url}}" alt="Graphic Image" class="graphic-image">
-                            <h2>{{project.showcase_title}}</h2>
-                            <p>{{project.showcase_description}}</p>
-                        </div>
                     
-                    </div>
-                    <div class="graphic-overlay" onclick="toggleGraphicInfo(document.querySelector('.graphic-card.graphic-opened'))">
+                    <div class="graphic-overlay">
                         <div class="graphic-info">
-                            <span class="close-button" onclick="toggleGraphicInfo()">x</span>
-                            <div class="graphic-content">
-                                <div id="graphicCarousel" class="carousel">
-                                    <div class="carousel-images">
-                                        {% for img in project.project_imgs.all %}
-                                        <img src="{% if img.image %}{{img.image.url}}{% endif %}" alt="Graphic Image" class="graphic-image">
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="graphic-text">
-                                    <h3>{{project.showcase_title}}</h3>
-                                    <p>{{project.showcase_description}}</p>
-                                </div>
+                            <span class="close-button">&times;</span>
+                            <div class="modal-content">
+                                <img class="modal-img" src="" alt="Modal Image">
                             </div>
-                        </div>                        
-                    
+                        </div>
                     </div>
-                    {% endfor %}
-                  
                     
-                </div>
+                    <div class="graphic-designs" id="showcase-section" data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
+                        data-aos-delay="300" data-aos-offset="0">
+                        {% for project in user_data.user_project.all %}
+                        <div class="graphic-container">
+                            <div class="graphic-card" data-img-src="{{project.project_imgs.all.0.image.url}}">
+                                <img src="{{project.project_imgs.all.0.image.url}}" alt="Graphic Image" class="graphic-image">
+                                <h2>{{project.showcase_title}}</h2>
+                                <p>{{project.showcase_description}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
 
-                <!--shwocase controls -->
-                <div class="graphic-controls">
-                    <button class="prev-graphic">&#10094;</button>
-                    <button class="next-graphic">&#10095;</button>
-                </div>
-
+    
+      
                 <div class="divider2">
             <!-- CONTACT ME -->
             <div class="contact-container" id="contact-section" data-aos="fade-zoom-in"
@@ -235,9 +216,9 @@ data-aos-offset="0">
                 <div class="contact-form">
                   <h2>Got Ideas? Let's team up.</h2>
                   <form>
-                    <input type="text" placeholder="First Name *" required>
-                    <input type="email" placeholder="Email *" required>
-                    <input type="text" placeholder="Subject *" required>
+                    <input type="text" placeholder="First Name " required>
+                    <input type="email" placeholder="Email " required>
+                    <input type="text" placeholder="Subject " required>
                     <textarea placeholder="Your message *" required></textarea>
                     <button type="submit" >Send Message</button>
                   </form>
@@ -248,12 +229,17 @@ data-aos-offset="0">
 
                     <!-- welcomepage -->
             <script>
-                document.getElementById('showPortfolioBtn').addEventListener('click', function() {
-                    document.getElementById('hero').style.display = 'none';
-            
-                    document.getElementById('portfolio').style.display = 'block';
-                });
+              document.getElementById('showPortfolioBtn').addEventListener('click', function() {
+    document.getElementById('hero').style.opacity = '0';
+    document.getElementById('hero').style.transition = 'opacity 0.5s ease';
+    setTimeout(function() {
+        document.getElementById('hero').style.display = 'none';
+        document.getElementById('portfolio').style.display = 'block';
+        document.getElementById('portfolio').style.opacity = '1';
+    }, 500);
+});
             </script>
+
 
               <!-- redirection -->
               <script>
@@ -307,92 +293,37 @@ data-aos-offset="0">
 
                 <!--GRAPHIC-->
                 <script>
-                   document.addEventListener('DOMContentLoaded', function() {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-images img');
-    const totalSlides = slides.length;
-
-    function showSlide(index) {
-        slides.forEach((slide, idx) => {
-            slide.classList.remove('active');
-            if (idx === index) {
-                slide.classList.add('active');
-            }
-        });
-    }
-
-    function moveSlide(step) {
-        currentSlide = (currentSlide + step + totalSlides) % totalSlides;
-        showSlide(currentSlide);
-    }
-
-    showSlide(currentSlide);
-
-    var index = 0;
-    var graphicCards = document.querySelectorAll('.graphic-card');
-    var totalCards = graphicCards.length;
-    
-    function updateDisplay() {
-        graphicCards.forEach((card, idx) => {
-            card.style.display = idx >= index && idx < index + 3 ? 'block' : 'none';
-        });
-    }
-
-    document.querySelector('.prev-graphic').addEventListener('click', function() {
-        index = Math.max(index - 1, 0);
-        updateDisplay();
-    });
-
-    document.querySelector('.next-graphic').addEventListener('click', function() {
-        index = Math.min(index + 1, totalCards - 3);
-        updateDisplay();
-    });
-
-    updateDisplay();
-
-    var overlay = document.querySelector('.graphic-overlay');
-
-    graphicCards.forEach(function(card) {
-        card.addEventListener('click', function() {
-            var graphicImage = card.querySelector('.graphic-image').src;
-            var graphicTitle = card.querySelector('h2').textContent;
-            var graphicDesc = card.querySelector('p').textContent;
-            
-            slides[0].src = graphicImage;
-            slides[0].classList.add('active'); 
-            overlay.querySelector('.graphic-text h3').textContent = graphicTitle;
-            overlay.querySelector('.graphic-text p').textContent = graphicDesc;
-            
-            currentSlide = 0;
-            showSlide(currentSlide);
-
-            overlay.style.display = 'flex';
-        });
-    });
-
-    overlay.querySelector('.close-button').addEventListener('click', function() {
-        overlay.style.display = 'none';
-    });
-
-    overlay.addEventListener('click', function(event) {
-        if (event.target == overlay) {
-            overlay.style.display = 'none';
-        }
-    });
-
-    document.querySelector('.carousel .prev').addEventListener('click', function() {
-        moveSlide(-1);
-    });
-
-    document.querySelector('.carousel .next').addEventListener('click', function() {
-        moveSlide(1);
-    });
-});
-
-function toggleGraphicInfo() {
-   
-}
-                    </script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const overlay = document.querySelector('.graphic-overlay');
+                        const modalImg = overlay.querySelector('.modal-img');
+                        const closeBtn = overlay.querySelector('.close-button');
+                        const graphicCards = document.querySelectorAll('.graphic-card');
+                
+                        graphicCards.forEach(function (card) {
+                            card.addEventListener('click', function () {
+                                const graphicImage = card.querySelector('img').src; 
+                                modalImg.src = graphicImage;
+                                overlay.style.display = 'flex';
+                            });
+                        });
+                
+                        closeBtn.addEventListener('click', function () {
+                            overlay.style.display = 'none';
+                        });
+                
+                        overlay.addEventListener('click', function (event) {
+                            if (event.target === overlay) {
+                                overlay.style.display = 'none';
+                            }
+                        });
+                    });
+                </script>
+                
+                
+                
+                
+                
+                
                     
 
 
