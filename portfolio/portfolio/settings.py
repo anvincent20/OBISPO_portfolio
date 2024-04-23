@@ -149,7 +149,6 @@ AWS_QUERYSTRING_AUTH = False
 
 AWS_HEADERS = {
     'Access-Control-Allow-Origin': '*',
-}   
+}
 
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Sto
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
